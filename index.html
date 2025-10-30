@@ -1,25 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lost & Found - Login</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Lost & Found — Login</title>
+<link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <div class="login-card">
-      <img src="logo.png" alt="Logo" class="logo" />
-      <h2>Welcome Back</h2>
-      <p class="subtitle">Lost & Found Portal</p>
-      <form id="loginForm">
-        <input type="text" id="email" placeholder="Email" required />
-        <input type="password" id="password" placeholder="Password" required />
-        <button type="submit">Login</button>
-        <p id="error" class="error"></p>
-      </form>
+<div class="page">
+  <div class="card login-card">
+    <img src="logo.svg" alt="Logo" class="logo" onerror="this.style.display='none'"/>
+    <h1>Lost & Found</h1>
+    <p class="muted">Project showcase — demo only</p>
+
+    <div class="toggle-row">
+      <button id="toggleStudent" class="toggle active">Student</button>
+      <button id="toggleAdmin" class="toggle">Admin</button>
     </div>
+
+    <form id="loginForm" class="form">
+      <input id="email" type="email" placeholder="Email" required />
+      <input id="password" type="password" placeholder="Password" required />
+      <button type="submit" class="btn">Login</button>
+      <p id="loginError" class="error"></p>
+    </form>
+
+    <p class="hint">Student demo: <b>student@lostfound.com</b> / <b>1234</b><br>
+       Admin demo: <b>admin@lostfound.com</b> / <b>admin123</b></p>
   </div>
-  <script src="script.js"></script>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>

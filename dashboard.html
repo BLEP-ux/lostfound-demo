@@ -1,15 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Student Dashboard</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lost & Found — Student Dashboard</title>
+<link rel="stylesheet" href="style.css">
 </head>
-<body style="display:flex;justify-content:center;align-items:center;height:100vh;">
-  <div class="login-card">
-    <h2>🎉 Welcome!</h2>
-    <p>You’re now logged in to the Lost & Found demo.</p>
+<body>
+<div class="container">
+  <div class="topbar">
+    <div class="header-row">
+      <h2>Student Dashboard</h2>
+      <div class="small muted">Logged in as student</div>
+    </div>
+    <div>
+      <button onclick="localStorage.removeItem('lf_demo_user');window.location.href='index.html'" class="small-btn">Logout</button>
+    </div>
   </div>
+
+  <div class="grid">
+    <div>
+      <div class="card-panel">
+        <h3>Report Lost Item</h3>
+        <div class="field">
+          <label>Item Name</label>
+          <input id="itemName" type="text" placeholder="e.g., Black Wallet">
+        </div>
+        <div class="field">
+          <label>Category</label>
+          <input id="itemCategory" type="text" placeholder="e.g., Wallet, Phone, ID">
+        </div>
+        <div class="field">
+          <label>Description</label>
+          <textarea id="itemDesc" placeholder="Details..." rows="3"></textarea>
+        </div>
+        <div class="field">
+          <label>Location</label>
+          <input id="itemLocation" type="text" placeholder="Where it was lost">
+        </div>
+        <div class="field">
+          <label>Date Lost</label>
+          <input id="itemDate" type="date">
+        </div>
+        <div class="field">
+          <label>Contact Info</label>
+          <input id="itemContact" type="text" placeholder="Phone or email">
+        </div>
+        <div class="field">
+          <label>Photo (optional)</label>
+          <input id="itemImage" type="file" accept="image/*">
+        </div>
+        <div style="display:flex;gap:8px;align-items:center">
+          <button id="addItemBtn" class="btn">Submit Report</button>
+          <div id="studentMsg" class="small muted"></div>
+        </div>
+      </div>
+
+      <div class="card-panel" style="margin-top:14px">
+        <h3>Your Reported Items</h3>
+        <div id="myItemsList" style="margin-top:10px"></div>
+      </div>
+    </div>
+
+    <aside>
+      <div class="card-panel">
+        <h3>Quick Tips</h3>
+        <p class="small">Add clear photos and exact location to increase chances of recovery.</p>
+      </div>
+      <div class="card-panel" style="margin-top:12px">
+        <h3>Actions</h3>
+        <button onclick="window.location.href='admin_dashboard.html'" class="small-btn">View Admin (demo)</button>
+      </div>
+    </aside>
+  </div>
+
+  <div class="footer">This demo stores data only in your browser (localStorage).</div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>

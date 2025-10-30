@@ -1,46 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Admin Dashboard</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lost & Found — Admin</title>
+<link rel="stylesheet" href="style.css">
 </head>
-<body style="padding:30px;background:linear-gradient(135deg,#f8e8ff,#a2c2e0);font-family:Poppins,sans-serif;">
-  <div class="login-card" style="width:600px;text-align:left;">
-    <h2>📋 Admin Dashboard</h2>
-    <p>Here are the sample reported items:</p>
-    <table border="0" width="100%" style="margin-top:15px;">
-      <thead>
-        <tr>
-          <th>Item</th>
-          <th>Location</th>
-          <th>Date Reported</th>
-          <th>Status</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Black Wallet</td>
-          <td>CCS Lobby</td>
-          <td>Oct 29, 2025</td>
-          <td><span style="color:orange;font-weight:600;">Pending</span></td>
-        </tr>
-        <tr>
-          <td>USB Flash Drive</td>
-          <td>Lab 202</td>
-          <td>Oct 25, 2025</td>
-          <td><span style="color:green;font-weight:600;">Claimed</span></td>
-        </tr>
-      </tbody>
-    </table>
-    <button onclick="logout()" style="margin-top:20px;">Logout</button>
+<body>
+<div class="container">
+  <div class="topbar">
+    <div class="header-row">
+      <h2>Admin Dashboard</h2>
+      <div class="small muted">Control panel</div>
+    </div>
+    <div>
+      <button id="logoutAdmin" class="small-btn">Logout</button>
+    </div>
   </div>
 
-  <script>
-    function logout() {
-      window.location.href = "admin_login.html";
-    }
-  </script>
+  <div class="grid">
+    <div>
+      <div class="card-panel">
+        <h3>Reported Items (Priority)</h3>
+        <div style="display:flex;gap:8px;align-items:center;margin-bottom:10px">
+          <label class="small">Sort by</label>
+          <select id="sortBy">
+            <option value="priority">Priority</option>
+            <option value="date">Newest</option>
+          </select>
+          <button id="clearAll" class="small-btn">Clear All</button>
+          <div id="adminMsg" class="small muted"></div>
+        </div>
+
+        <div id="adminItemsList"></div>
+      </div>
+    </div>
+
+    <aside>
+      <div class="card-panel">
+        <h3>Priority Rules</h3>
+        <ol class="small">
+          <li><b>High</b> — Wallet / Phone / ID / Passport</li>
+          <li><b>Medium</b> — Lost within the last 2 days</li>
+          <li><b>Low</b> — Otherwise</li>
+        </ol>
+      </div>
+      <div class="card-panel" style="margin-top:12px">
+        <h3>Legend</h3>
+        <p class="small"><span class="priority pr-high">HIGH</span> <span class="small">Important items</span></p>
+        <p class="small"><span class="priority pr-med">MED</span> <span class="small">Recent</span></p>
+        <p class="small"><span class="priority pr-low">LOW</span> <span class="small">Other</span></p>
+      </div>
+    </aside>
+  </div>
+
+  <div class="footer">Actions change data only in your browser (localStorage).</div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
