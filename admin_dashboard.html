@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body style="padding:30px;background:linear-gradient(135deg,#f8e8ff,#a2c2e0);font-family:Poppins,sans-serif;">
+  <div class="login-card" style="width:600px;text-align:left;">
+    <h2>📋 Admin Dashboard</h2>
+    <p>Here are the sample reported items:</p>
+    <table border="0" width="100%" style="margin-top:15px;">
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Location</th>
+          <th>Date Reported</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Black Wallet</td>
+          <td>CCS Lobby</td>
+          <td>Oct 29, 2025</td>
+          <td><span style="color:orange;font-weight:600;">Pending</span></td>
+        </tr>
+        <tr>
+          <td>USB Flash Drive</td>
+          <td>Lab 202</td>
+          <td>Oct 25, 2025</td>
+          <td><span style="color:green;font-weight:600;">Claimed</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <button onclick="logout()" style="margin-top:20px;">Logout</button>
+  </div>
+
+  <script>
+    function logout() {
+      window.location.href = "admin_login.html";
+    }
+  </script>
+</body>
+</html>
